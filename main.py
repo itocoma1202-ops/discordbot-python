@@ -23,6 +23,7 @@ client = discord.Client(intents=intents)
 @client.event
 async def on_ready():
     # 起動したらターミナルにログイン通知が表示される
+    #テストメッセ―ジ
     print('ログインしました')
 
 # メッセージ受信時に動作する処理
