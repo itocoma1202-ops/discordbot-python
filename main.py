@@ -1,13 +1,23 @@
 # インストールした discord.py を読み込む
 import discord
+import os
+from dotenv import load_dotenv
+
+# .envファイルの内容を読み込む
+load_dotenv()
+
+intents=discord.Intents.none()
+intents.reactions = True
+intents.guilds = True
+
+# 環境変数を取得
+TOKEN = os.getenv("D_TOKEN")
 
 # 自分のBotのアクセストークンに置き換えてください
-TOKEN = 'MTQ1Mjk4NTk2NDMxMzE4MjIwOA.Gjf62C.FVuHQEzyM1o0sa-OzgNRMRF2mDAaFGx7nnWlyI'
-
-#
+#TOKENのから揚げｱｱｱｱｱｱｱｱｱｱｱｱｱｱｱｱｱｱｱｱｱｱｱｱｱｱｱｱwwwwwwwwwwwwwwwwwwwww
 # discord.py Ver2.0 以降は必要
 #intent.message_content = True
-client = discord.Client(intents=discord.Intents.default())
+client = discord.Client(intents=intents)
 
 # 起動時に動作する処理
 @client.event
