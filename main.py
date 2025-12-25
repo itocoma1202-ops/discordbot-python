@@ -14,6 +14,7 @@ load_dotenv()
 #Render用のflaskアプリの設定
 
 app = Flask(__name__)
+gunicorn app:Flask
 
 @app.route('/')
 def home():
