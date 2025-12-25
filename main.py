@@ -2,10 +2,26 @@
 import discord
 import os
 from dotenv import load_dotenv
+from flask import Flask
+
+
+# ソケットの作成
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # .envファイルの内容を読み込む
 load_dotenv()
 
+#Render用のflaskアプリの設定
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Hello, Render!"
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+#intents関連
 intents=discord.Intents.none()
 intents.reactions = True
 intents.guilds = True
